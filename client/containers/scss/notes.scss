@@ -1,0 +1,8 @@
+.notes {
+  width: 30%;
+  padding-left: 5%;
+  float:left;
+  @media (max-width: 450px) {
+    width: 90%;
+  }
+}

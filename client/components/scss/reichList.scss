@@ -1,0 +1,97 @@
+.steveReich {
+  position: relative;
+  color: #313131;
+  min-height: 90vh;
+  margin-bottom: 5vh;
+  h1 {
+    font-family: 'Theano Didot';
+    margin-left: 16%;
+    font-size: 36px;
+    font-weight: lighter;
+  }
+  li, button {
+    font-family: 'Futura';
+    font-weight: lighter;
+  }
+
+  .songList {
+    position: relative;
+    width: 50%;
+    margin-left: 18%;
+    background: #EDEDED;
+    letter-spacing: 1px;
+    padding: 2% 0;
+    ul {
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      -webkit-padding-start: 0;
+    }
+
+    li {
+        list-style: none;
+        margin-bottom: 4%;
+        position: relative;
+        .trackInfo {
+          display: block;
+          padding: 2%;
+          &:hover {
+            background: lighten(#ededed, 2%);
+            box-shadow: 0 0 2px #666;
+            &:after {
+              color: #FF7878;
+              position: absolute;
+              right: 20px;
+              top: 40%;
+              content: '▶';
+              display: block;
+            }
+          }
+          text-decoration: none;
+          h3,h4 {
+            font-weight: lighter;
+            margin: 0; // Reset, I _love_ css
+          }
+          h3 {
+            margin-left: -7%;
+            margin-bottom: 5px;
+            width: 80%;
+            color: #313131;
+          }
+          h4 {
+            color:#525252;
+          }
+      }
+    }
+    button {
+      position: absolute;
+      bottom: -20px;
+      left: 2%;
+      height: 40px;
+      margin: auto;
+      /* Rectangle 4: */
+      border:none;
+      background: #FF7878;
+      box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
+      /* Get top 10: */
+      width: 48%;
+      font-family: Futura-Medium;
+      font-size: 20px;
+      color: #FFFFFF;
+      letter-spacing: 0.44px;
+    }
+
+  }
+  .coolCircle {
+    right: 0;
+    bottom: 50px;
+    right: -75px;
+    border-radius: 150px;
+    position: absolute;
+    background: blue;
+    height: 150px;
+    width: 150px;
+    /* Oval: */
+    background-image: linear-gradient(0deg, #FAFAFA 0%, #EDEDED 100%);
+    background-image: -webkit-linear-gradient(0deg, #FAFAFA 0%, #EDEDED 100%);
+  }
+}
