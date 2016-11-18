@@ -12,6 +12,7 @@ const { reducers } = require('./reducers')
 const Main = require('./containers/Main')
 
 require('normalize.css')
+require('./containers/scss/fonts.scss')
 
 const store = createStore(
   reducers,
