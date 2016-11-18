@@ -40,5 +40,16 @@
         margin-bottom: 0;
       }
     }
+    button {
+      border: none;
+      background: #ccc;
+      color: #001;
+      padding:1%;
+      transition: backround 0.1s ease-in;
+      &:hover {
+        background: lighten(#ccc, 10%);
+        box-shadow: 0 0 15px white;
+      }
+    }
   }
 }
