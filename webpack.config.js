@@ -1,5 +1,6 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const WebpackUglifyJsPlugin = require('webpack-uglify-js-plugin')
 
 module.exports = {
   entry: ['whatwg-fetch','./client/app.js'],
@@ -24,6 +25,18 @@ module.exports = {
  plugins: [
    new ExtractTextPlugin('style.bundle.css', {
        allChunks: true
+   }),
+   new WebpackUglifyJsPlugin({
+     cacheFolder: 'cache',
+     debug: false,
+     minimize: true,
+     sourceMap: false,
+     output: {
+       comments: false
+     },
+     compressor: {
+       warnings: false
+     }
    })
  ],
   output: {
