@@ -13,12 +13,6 @@ let request = (path, method, data, options = {}) =>
     uri.href = `${uri.href}?${QueryString.encode(data)}`
   }
 
-  console.log({headers: {
-    'Content-Type': 'application/json',
-    'accept': 'application/json',
-    ...options.headers
-  }})
-
   return window.fetch(uri.href, {
     method,
     body: body,

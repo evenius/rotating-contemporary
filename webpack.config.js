@@ -1,6 +1,7 @@
 const path = require('path')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const WebpackUglifyJsPlugin = require('webpack-uglify-js-plugin')
+const { DefinePlugin } = require('webpack')
 
 module.exports = {
   entry: ['whatwg-fetch','./client/app.js'],
@@ -27,21 +28,24 @@ module.exports = {
    includePaths: [path.resolve(__dirname, "client/lib/sass")]
  },
  plugins: [
+   new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify('production')
+  }),
    new ExtractTextPlugin('style.bundle.css', {
        allChunks: true
    }),
-  //  new WebpackUglifyJsPlugin({
-  //    cacheFolder: 'cache',
-  //    debug: false,
-  //    minimize: true,
-  //    sourceMap: false,
-  //    output: {
-  //      comments: false
-  //    },
-  //    compressor: {
-  //      warnings: false
-  //    }
-  //  })
+   new WebpackUglifyJsPlugin({
+     cacheFolder: 'cache',
+     debug: false,
+     minimize: true,
+     sourceMap: false,
+     output: {
+       comments: false
+     },
+     compressor: {
+       warnings: false
+     }
+   })
  ],
   output: {
     path: './build',
