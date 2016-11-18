@@ -11,6 +11,8 @@ const { reducers } = require('./reducers')
 
 const Main = require('./containers/Main')
 
+window.fetch
+
 require('normalize.css')
 require('./containers/scss/fonts.scss')
 
