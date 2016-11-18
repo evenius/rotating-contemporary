@@ -15,7 +15,11 @@ module.exports = {
       {
         test: /\.*css$/,
         loader: ExtractTextPlugin.extract('css!sass', { publicPath: '../'})
-      }
+      },
+      {
+           test: /\.(eot|svg|ttf|woff|woff2)$/,
+           loader: 'file?name=build/fonts/[name].[ext]'
+       }
     ]
   },
   devtool: 'source-map',

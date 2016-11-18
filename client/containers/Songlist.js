@@ -3,12 +3,9 @@ const { connect } = require('react-redux')
 
 const TrackInfo = require('../components/TrackInfo')
 
-const { fetchTopSongs, unabridgeTopSongs, reBuildScroller } = require('../actions')
+const { unabridgeTopSongs, reBuildScroller } = require('../actions')
 
 class Songlist extends React.Component {
-  componentDidMount () {
-    this.props.fetchTopSongsAbridged()
-  }
 
   componentDidUpdate () {
     this.props.reBuildScroller()
@@ -52,7 +49,6 @@ function mapDispatchToProps (dispatch, ownProps) {
   let { artist } = ownProps
   return {
     reBuildScroller ()  { dispatch(reBuildScroller()) },
-    fetchTopSongsAbridged () { dispatch(fetchTopSongs(artist)) },
     fetchAllTopSongs () { dispatch(unabridgeTopSongs(artist)) }
   }
 }

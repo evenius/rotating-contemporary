@@ -17,9 +17,9 @@ let request = (path, method, data, options = {}) =>
     'Content-Type': 'application/json',
     'accept': 'application/json',
     ...options.headers
-  }});
+  }})
 
-  return window.fetch(uri, {
+  return window.fetch(uri.href, {
     method,
     body: body,
     headers: {
