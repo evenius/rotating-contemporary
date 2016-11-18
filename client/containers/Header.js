@@ -1,14 +1,34 @@
 const React = require('react')
-const { connect } =  require('react-redux')
-const capitalize = require('capitalize')
+const {connect} = require('react-redux')
+
+const { chooseArtist } = require('../actions')
 
 require('./scss/header.scss')
 
-// Blindly adding 's to make it possessive? Apparently http://grammarist.com/style/last-names/
-function Header ({user}) {
+const Header = function ({ chooseSteve, chooseEric, chooseJohn }) {
   return (<header>
-    <h1>{capitalize.words(user.userName)}'s notes</h1>
+    <nav>
+      <a onClick={chooseSteve}>Steve Reich</a>
+      <a onClick={chooseEric}>Eric Whitacre</a>
+      <a onClick={chooseJohn}>John Adams</a>
+    </nav>
   </header>)
 }
 
-module.exports = connect(({user}) => ({ user }))(Header)
+const mapDispatchToProps = function (dispatch) {
+  // Why not just do this in render?
+  // rebinding is the answer
+
+  let choice = (artistName) => {
+    console.log('clicked')
+    dispatch(chooseArtist(artistName))
+  }
+
+  return {
+    chooseSteve: () => choice('steveReich'),
+    chooseEric: () => choice('ericWhitacre'),
+    chooseJohn: () => choice('johnAdams')
+  }
+}
+
+module.exports = connect(() => ({}), mapDispatchToProps)(Header)

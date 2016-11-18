@@ -3,18 +3,25 @@ const { connect } = require('react-redux')
 
 const TrackInfo = require('../components/TrackInfo')
 
-const { fetchTopSongs, unabridgeTopSongs } = require('../actions/index')
+const { fetchTopSongs, unabridgeTopSongs, reBuildScroller } = require('../actions')
 
 class Songlist extends React.Component {
   componentDidMount () {
     this.props.fetchTopSongsAbridged()
   }
+
+  componentDidUpdate () {
+    this.props.reBuildScroller()
+  }
+
   render () {
     let {
       tracks,
+      children,
       isAbridged,
-      fetchAllTopSongs
+      fetchAllTopSongs,
     } = this.props
+
     if (!tracks) {
       return (<h1>Loading</h1>)
     } else {
@@ -26,7 +33,7 @@ class Songlist extends React.Component {
           {trackList.map(track => (<li key={track.get('id')}><TrackInfo track={track} /></li>))}
         </ul>
         {isAbridged ? <button onClick={fetchAllTopSongs}>Get top 10</button> : null}
-        {this.props.children}
+        {children}
       </div>)
     }
   }
@@ -44,6 +51,7 @@ function mapStateToProps (state, ownProps) {
 function mapDispatchToProps (dispatch, ownProps) {
   let { artist } = ownProps
   return {
+    reBuildScroller ()  { dispatch(reBuildScroller()) },
     fetchTopSongsAbridged () { dispatch(fetchTopSongs(artist)) },
     fetchAllTopSongs () { dispatch(unabridgeTopSongs(artist)) }
   }

@@ -10,3 +10,6 @@ function fizzBuzz () {
 }
 
 fizzBuzz()
+
+
+// Elegant way of a + b + c

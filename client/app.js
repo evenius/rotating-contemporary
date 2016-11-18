@@ -9,7 +9,7 @@ const { Router, Route, IndexRoute, browserHistory } = require('react-router')
 
 const { reducers } = require('./reducers')
 
-const Landing = require('./components/Landing')
+const Main = require('./containers/Main')
 
 require('normalize.css')
 
@@ -25,7 +25,7 @@ const store = createStore(
 render(
   (<Provider store={store}>
     <Router history={createHashHistory()}>
-        <Route path='/' component={Landing} />
+        <Route path='/' component={Main} />
     </Router>
   </Provider>),
   document.getElementById('root')

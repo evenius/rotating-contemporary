@@ -3,9 +3,8 @@ const { partial } = require('fast.js')
 const fakeResponse = require('./fakeResponse')
 const QueryString = require('querystring')
 
-let request = (path, method, data, isFake) =>
+let request = (path, method, data, options = {}) =>
 {
-  if (isFake) {return new Promise((resolve, reject) => { setTimeout(partial(resolve, fakeResponse), 1500) })}
   let uri = new window.URL(path)
   let body = (data ? JSON.stringify(data) : data)
 
@@ -14,12 +13,19 @@ let request = (path, method, data, isFake) =>
     uri.href = `${uri.href}?${QueryString.encode(data)}`
   }
 
+  console.log({headers: {
+    'Content-Type': 'application/json',
+    'accept': 'application/json',
+    ...options.headers
+  }});
+
   return window.fetch(uri, {
     method,
     body: body,
     headers: {
       'Content-Type': 'application/json',
-      'accept': 'application/json'
+      'accept': 'application/json',
+      ...options.headers
     }
   }).then(response => {
     if (response.ok) {
@@ -37,8 +43,8 @@ let request = (path, method, data, isFake) =>
 module.exports = {
   request,
   // responseError,
-  GET: (path, data, isFake) => request(path, 'GET', data, isFake),
-  POST: (path, data, isFake) => request(path, 'POST', data, isFake),
-  PATCH: (path, data, isFake) => request(path, 'PATCH', data, isFake),
-  DELETE: (path, data, isFake) => request(path, 'DELETE', data, isFake)
+  GET: (path, data, options) => request(path, 'GET', data, options),
+  POST: (path, data, options) => request(path, 'POST', data, options),
+  PATCH: (path, data, options) => request(path, 'PATCH', data, options),
+  DELETE: (path, data, options) => request(path, 'DELETE', data, options)
 }

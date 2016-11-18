@@ -1,9 +1,21 @@
+.chooseArtist ul {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center; }
+  .chooseArtist ul li {
+    cursor: pointer;
+    text-decoration: underline;
+    margin-right: 10px;
+    font-family: 'Theano Didot';
+    list-style: none; }
+    .chooseArtist ul li:hover {
+      color: red; }
 @charset "UTF-8";
 .steveReich {
   position: relative;
   color: #313131;
-  min-height: 90vh;
-  margin-bottom: 5vh; }
+  margin-bottom: 5%; }
   .steveReich h1 {
     font-family: 'Theano Didot';
     margin-left: 16%;
@@ -79,6 +91,8 @@
     /* Oval: */
     background-image: linear-gradient(0deg, #FAFAFA 0%, #EDEDED 100%);
     background-image: -webkit-linear-gradient(0deg, #FAFAFA 0%, #EDEDED 100%); }
+.extra, .overlay, .cover-small, .logo, .get-link-button {
+  display: none !important; }
 footer {
   display: block;
   background: #666;
@@ -92,12 +106,376 @@ footer {
   font-size: 15px;
   font-weight: lighter;
   letter-spacing: 2px; }
-body, body > div {
+.landing {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  bottom: 5%;
+  left: 5%;
+  /* Rectangle: */
+  background-image: linear-gradient(-180deg, #F4F4F4 0%, #E4E4E4 100%);
+  background-image: -webkit-linear-gradient(-180deg, #F4F4F4 0%, #E4E4E4 100%);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center; }
+  .landing > * {
+    width: 30%;
+    margin: 15px auto;
+    clear: both;
+    display: block; }
+  .landing h1 {
+    font-family: 'Theano Didot';
+    font-weight: lighter; }
+@charset "UTF-8";
+.ericWhitacre {
+  position: relative;
+  color: #313131;
+  margin-bottom: 5%; }
+  .ericWhitacre h1 {
+    font-family: 'Theano Didot';
+    font-size: 42px;
+    font-weight: lighter;
+    text-align: center; }
+  .ericWhitacre li, .ericWhitacre button {
+    font-family: 'Futura';
+    font-weight: lighter; }
+  .ericWhitacre .songList {
+    position: relative;
+    width: 50%;
+    margin: auto;
+    /* Rectangle 5: */
+    background: #FFDC7B;
+    box-shadow: 0 0 9px 0 #FFDB7B;
+    letter-spacing: 1px;
+    padding: 2% 0; }
+    .ericWhitacre .songList ul {
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      -webkit-padding-start: 0; }
+    .ericWhitacre .songList li {
+      list-style: none;
+      margin-bottom: 4%;
+      position: relative; }
+      .ericWhitacre .songList li .trackInfo {
+        display: block;
+        padding: 5%;
+        transition: background 0.1s ease-in;
+        text-decoration: none; }
+        .ericWhitacre .songList li .trackInfo:hover {
+          background: #ffe395;
+          box-shadow: inset 0 0 2px #EEE; }
+          .ericWhitacre .songList li .trackInfo:hover:after {
+            color: #FFF;
+            position: absolute;
+            right: 20px;
+            top: 40%;
+            content: '\25B6';
+            display: block; }
+        .ericWhitacre .songList li .trackInfo h3, .ericWhitacre .songList li .trackInfo h4 {
+          font-weight: lighter;
+          margin: 0; }
+        .ericWhitacre .songList li .trackInfo h3 {
+          margin-left: -1%;
+          margin-bottom: 5px;
+          width: 80%;
+          color: #313131; }
+        .ericWhitacre .songList li .trackInfo h4 {
+          color: #525252; }
+    .ericWhitacre .songList button {
+      position: absolute;
+      bottom: 20px;
+      right: 2%;
+      height: 60px;
+      margin: auto;
+      /* Rectangle 4: */
+      border: none;
+      background: #FFFFFF;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.5);
+      /* Get top 10: */
+      width: 48%;
+      font-family: Futura-Medium;
+      font-size: 20px;
+      letter-spacing: 0.44px; }
+.johnAdams {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: left;
+  min-height: 60%;
+  padding: 5% 0; }
+  .johnAdams h1 {
+    display: block;
+    margin-left: 15%; }
+  .johnAdams .songList {
+    width: 60%; }
+    .johnAdams .songList float:left
+ul {
+      display: block;
+      -webkit-margin-before: 0;
+      -webkit-margin-after: 0;
+      -webkit-padding-start: 0; }
+    .johnAdams .songList li {
+      display: block;
+      list-style: none;
+      margin-bottom: 25px; }
+      .johnAdams .songList li a {
+        text-decoration: none; }
+        .johnAdams .songList li a:hover {
+          text-decoration: underline;
+          color: green; }
+      .johnAdams .songList li h3 {
+        margin-bottom: 5px;
+        width: 80%;
+        color: #313131; }
+      .johnAdams .songList li h4 {
+        color: #525252;
+        margin-bottom: 0; }
+header {
+  display: block;
+  height: 61px;
+  width: 100%; }
+  header nav {
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    background: #FBFBFB;
+    height: 2%;
+    padding: 1% 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    box-shadow: 1px 0 2px #CCC; }
+    header nav a {
+      font-family: 'Futura';
+      font-weight: bold;
+      letter-spacing: 1px;
+      text-decoration: underline;
+      cursor: pointer;
+      color: #827BFF;
+      transition: color 0.1s ease-out; }
+      header nav a:hover {
+        color: #5248ff; }
+.fullPager, .fullPager > div {
+  display: block;
+  height: 100%;
+  width: 100%;
+  position: relative; }
+html, body, body > div, .main {
   background: #FBFBFB;
   height: 100%;
   width: 100%; }
-  body button, body > div button {
-    cursor: pointer; }
+
+button {
+  cursor: pointer; }
+/*!
+ * fullPage 2.8.8
+ * https://github.com/alvarotrigo/fullPage.js
+ * MIT licensed
+ *
+ * Copyright (C) 2013 alvarotrigo.com - A project by Alvaro Trigo
+ */
+.fp-enabled body, html.fp-enabled {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  -webkit-tap-highlight-color: transparent; }
+
+#superContainer {
+  height: 100%;
+  position: relative;
+  -ms-touch-action: none;
+  touch-action: none; }
+
+.fp-section {
+  position: relative;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.fp-slide {
+  float: left; }
+
+.fp-slide, .fp-slidesContainer {
+  height: 100%;
+  display: block; }
+
+.fp-slides {
+  z-index: 1;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all .3s ease-out;
+  transition: all .3s ease-out; }
+
+.fp-section.fp-table, .fp-slide.fp-table {
+  display: table;
+  table-layout: fixed;
+  width: 100%; }
+
+.fp-tableCell {
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  height: 100%; }
+
+.fp-slidesContainer {
+  float: left;
+  position: relative; }
+
+.fp-controlArrow {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -ms-user-select: none;
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  cursor: pointer;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  margin-top: -38px;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.fp-controlArrow.fp-prev {
+  left: 15px;
+  width: 0;
+  border-width: 38.5px 34px 38.5px 0;
+  border-color: transparent #fff transparent transparent; }
+
+.fp-controlArrow.fp-next {
+  right: 15px;
+  border-width: 38.5px 0 38.5px 34px;
+  border-color: transparent transparent transparent #fff; }
+
+.fp-scrollable {
+  overflow: hidden;
+  position: relative; }
+
+.fp-scroller {
+  overflow: hidden; }
+
+.iScrollIndicator {
+  border: 0 !important; }
+
+.fp-notransition {
+  -webkit-transition: none !important;
+  transition: none !important; }
+
+#fp-nav {
+  position: fixed;
+  z-index: 100;
+  margin-top: -32px;
+  top: 50%;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0); }
+
+#fp-nav.right {
+  right: 17px; }
+
+#fp-nav.left {
+  left: 17px; }
+
+.fp-slidesNav {
+  position: absolute;
+  z-index: 4;
+  left: 50%;
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0); }
+
+.fp-slidesNav.bottom {
+  bottom: 17px; }
+
+.fp-slidesNav.top {
+  top: 17px; }
+
+#fp-nav ul, .fp-slidesNav ul {
+  margin: 0;
+  padding: 0; }
+
+#fp-nav ul li, .fp-slidesNav ul li {
+  display: block;
+  width: 14px;
+  height: 13px;
+  margin: 7px;
+  position: relative; }
+
+.fp-slidesNav ul li {
+  display: inline-block; }
+
+#fp-nav ul li a, .fp-slidesNav ul li a {
+  display: block;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  text-decoration: none; }
+
+#fp-nav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li a.active span, .fp-slidesNav ul li:hover a.active span {
+  height: 12px;
+  width: 12px;
+  margin: -6px 0 0 -6px;
+  border-radius: 100%; }
+
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+  height: 4px;
+  width: 4px;
+  border: 0;
+  background: #333;
+  left: 50%;
+  top: 50%;
+  margin: -2px 0 0 -2px;
+  -webkit-transition: all .1s ease-in-out;
+  -moz-transition: all .1s ease-in-out;
+  -o-transition: all .1s ease-in-out;
+  transition: all .1s ease-in-out; }
+
+#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span {
+  width: 10px;
+  height: 10px;
+  margin: -5px 0 0 -5px; }
+
+#fp-nav ul li .fp-tooltip {
+  position: absolute;
+  top: -2px;
+  color: #fff;
+  font-size: 14px;
+  font-family: arial,helvetica,sans-serif;
+  white-space: nowrap;
+  max-width: 220px;
+  overflow: hidden;
+  display: block;
+  opacity: 0;
+  width: 0;
+  cursor: pointer; }
+
+#fp-nav ul li:hover .fp-tooltip, #fp-nav.fp-show-active a.active + .fp-tooltip {
+  -webkit-transition: opacity .2s ease-in;
+  transition: opacity .2s ease-in;
+  width: auto;
+  opacity: 1; }
+
+#fp-nav ul li .fp-tooltip.right {
+  right: 20px; }
+
+#fp-nav ul li .fp-tooltip.left {
+  left: 20px; }
+
+.fp-auto-height .fp-slide, .fp-auto-height .fp-tableCell, .fp-auto-height.fp-section {
+  height: auto !important; }
+
+.fp-responsive .fp-auto-height-responsive .fp-slide, .fp-responsive .fp-auto-height-responsive .fp-tableCell, .fp-responsive .fp-auto-height-responsive.fp-section {
+  height: auto !important; }
+
+/*# sourceMappingURL=jquery.fullpage.min.css.map */
 /*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).

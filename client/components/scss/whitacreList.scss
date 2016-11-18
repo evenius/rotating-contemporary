@@ -1,12 +1,12 @@
-.steveReich {
+.ericWhitacre {
   position: relative;
   color: #313131;
   margin-bottom: 5%;
   h1 {
     font-family: 'Theano Didot';
-    margin-left: 16%;
-    font-size: 36px;
+    font-size: 42px;
     font-weight: lighter;
+    text-align: center;
   }
   li, button {
     font-family: 'Futura';
@@ -16,8 +16,10 @@
   .songList {
     position: relative;
     width: 50%;
-    margin-left: 18%;
-    background: #EDEDED;
+    margin:auto;
+    /* Rectangle 5: */
+    background: #FFDC7B;
+    box-shadow: 0 0 9px 0 #FFDB7B;
     letter-spacing: 1px;
     padding: 2% 0;
     ul {
@@ -32,12 +34,13 @@
         position: relative;
         .trackInfo {
           display: block;
-          padding: 2%;
+          padding: 5%;
+          transition: background 0.1s ease-in;
           &:hover {
-            background: lighten(#ededed, 2%);
-            box-shadow: 0 0 2px #666;
+            background: lighten(#FFDC7B, 5%);
+            box-shadow: inset 0 0 2px #EEE;
             &:after {
-              color: #FF7878;
+              color: #FFF;
               position: absolute;
               right: 20px;
               top: 40%;
@@ -51,7 +54,7 @@
             margin: 0; // Reset, I _love_ css
           }
           h3 {
-            margin-left: -7%;
+            margin-left: -1%;
             margin-bottom: 5px;
             width: 80%;
             color: #313131;
@@ -63,34 +66,20 @@
     }
     button {
       position: absolute;
-      bottom: -20px;
-      left: 2%;
-      height: 40px;
+      bottom: 20px;
+      right: 2%;
+      height: 60px;
       margin: auto;
       /* Rectangle 4: */
       border:none;
-      background: #FF7878;
+      background: #FFFFFF;
       box-shadow: 0 2px 4px 0 rgba(0,0,0,0.50);
       /* Get top 10: */
       width: 48%;
       font-family: Futura-Medium;
       font-size: 20px;
-      color: #FFFFFF;
       letter-spacing: 0.44px;
     }
 
-  }
-  .coolCircle {
-    right: 0;
-    bottom: 50px;
-    right: -75px;
-    border-radius: 150px;
-    position: absolute;
-    background: blue;
-    height: 150px;
-    width: 150px;
-    /* Oval: */
-    background-image: linear-gradient(0deg, #FAFAFA 0%, #EDEDED 100%);
-    background-image: -webkit-linear-gradient(0deg, #FAFAFA 0%, #EDEDED 100%);
   }
 }
