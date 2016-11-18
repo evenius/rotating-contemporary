@@ -30,18 +30,18 @@ module.exports = {
    new ExtractTextPlugin('style.bundle.css', {
        allChunks: true
    }),
-   new WebpackUglifyJsPlugin({
-     cacheFolder: 'cache',
-     debug: false,
-     minimize: true,
-     sourceMap: false,
-     output: {
-       comments: false
-     },
-     compressor: {
-       warnings: false
-     }
-   })
+  //  new WebpackUglifyJsPlugin({
+  //    cacheFolder: 'cache',
+  //    debug: false,
+  //    minimize: true,
+  //    sourceMap: false,
+  //    output: {
+  //      comments: false
+  //    },
+  //    compressor: {
+  //      warnings: false
+  //    }
+  //  })
  ],
   output: {
     path: './build',

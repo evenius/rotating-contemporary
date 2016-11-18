@@ -20,7 +20,6 @@ const mapDispatchToProps = function (dispatch) {
   // rebinding is the answer
 
   let choice = (artistName) => {
-    console.log('clicked')
     dispatch(chooseArtist(artistName))
   }
 
