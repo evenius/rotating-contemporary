@@ -73,7 +73,7 @@ const mapDispatchToProps = function (dispatch) {
     },
     interestedIn: function (artist) { dispatch(showInterestInArtist(artist)) },
     disinterestedIn: function () { dispatch(showDisinterest()) },
-    artistPreloader: function (artist) { dispatch(fetchTopSongs(artist)) }
+    topSongsPreloader: function (artist) { dispatch(fetchTopSongs(artist)) }
   }
 }
 
@@ -83,7 +83,9 @@ const mergeProps = function (stateProps, dispatches) {
     preLoadArtists: () => {
       stateProps.artists.forEach((artist, b, c) => {
         // Will pre-request data from spotify api, thinking users are nosy buggers. Aren't you? 🤔
-        dispatches.artistPreloader(artist)
+        dispatches.topSongsPreloader(artist)
+        let tmpImage = new window.Image()
+        tmpImage.src = `${artist.get('name')}.jpg`
       })
     },
     // I will just add a dispatch to the artist-information, so the act of
