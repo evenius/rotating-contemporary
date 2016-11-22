@@ -36,7 +36,7 @@ class ArtistView extends React.Component {
 
     let ChosenArtistPage = artistPages[chosenArtist]
 
-    return (<div style={{overflowY: 'scroll', height: `${fullHeight}px`}}>
+    return (<div className='artistPage' style={{overflowY: 'scroll', height: `${fullHeight}px`}}>
       <Header />
       <ChosenArtistPage />
       <Footer/>
@@ -44,9 +44,9 @@ class ArtistView extends React.Component {
   }
 }
 
-const mapStateToProps = function ({topSongs, fullHeight}) {
+const mapStateToProps = function ({artists, fullHeight}) {
   return {
-    chosenArtist: topSongs.get('_chosenArtist'),
+    chosenArtist: artists.get('_chosenArtist'),
     fullHeight: fullHeight || window.innerHeight
   }
 }

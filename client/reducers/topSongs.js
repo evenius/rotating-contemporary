@@ -15,8 +15,6 @@ const topSongsReducer = (state, action) => {
       return state.set(action.artistName, fromJS(topSongs))
     case UNABRIDGE_TOP_SONGS:
       return state.setIn([action.artistName, 'isAbridged'], false)
-    case CHOSE_ARTIST:
-      return state.set('_chosenArtist', action.artistName)
   }
   return state || Map()
 }
